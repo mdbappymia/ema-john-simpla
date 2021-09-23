@@ -20,3 +20,6 @@
 .btn-regular:hover {
   background-color: rgb(216, 189, 37);
 }
+.fa-star {
+  color: goldenrod;
+}
