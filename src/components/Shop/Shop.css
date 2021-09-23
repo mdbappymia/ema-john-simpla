@@ -7,3 +7,7 @@
   margin-right: 5px;
   margin-left: 50px;
 }
+.cart-container {
+  position: fixed;
+  right: 5%;
+}
