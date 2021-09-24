@@ -7,8 +7,6 @@ import "./Product.css";
 const Product = (props) => {
   // console.log(props.product);
   const { name, img, seller, price, stock, star } = props.product;
-  console.log(props.product);
-
   return (
     <div className="product">
       <div>

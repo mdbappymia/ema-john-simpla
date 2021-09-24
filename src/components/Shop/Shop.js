@@ -5,9 +5,11 @@ import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
+  const [count, setCount] = useState(0);
   const [products, setProducts] = useState([]);
   const [displayProducts, setDisplayProducts] = useState([]);
   const [cart, setCart] = useState([]);
+
   useEffect(() => {
     fetch("products.JSON")
       .then((res) => res.json())
@@ -31,9 +33,10 @@ const Shop = () => {
 
       setCart(storedCart);
     }
-  }, [products]);
+  }, [products, count]);
   const handlaAddToCart = (product) => {
-    setCart([...cart, product]);
+    setCount(count + 1);
+    // setCart([...cart, product]);
     //save to locale storage (for now)
     addToDb(product.key);
   };
