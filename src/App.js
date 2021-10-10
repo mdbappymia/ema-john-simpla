@@ -5,9 +5,14 @@ import OrderReview from "./components/OrderReview/OrderReview";
 import Inventory from "./components/Inventory/Inventory";
 import NotFound from "./components/NotFound/NotFound";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import AuthProvider from "./context/AuthProvider";
+import PrivetRoute from "./components/PrivateRoute/PrivetRoute";
+import Shiping from "./components/Shiping/Shiping";
 const App = () => {
   return (
-    <div>
+    <AuthProvider>
       <Router>
         <Header></Header>
         <Switch>
@@ -20,18 +25,27 @@ const App = () => {
           <Route path="/review">
             <OrderReview></OrderReview>
           </Route>
-          <Route path="/inventory">
+          <PrivetRoute path="/inventory">
             <Inventory></Inventory>
-          </Route>
-          <Route path="/placeorder">
+          </PrivetRoute>
+          <PrivetRoute path="/shiping">
+            <Shiping></Shiping>
+          </PrivetRoute>
+          <PrivetRoute path="/placeorder">
             <PlaceOrder></PlaceOrder>
+          </PrivetRoute>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
           </Route>
           <Route path="*">
             <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>
-    </div>
+    </AuthProvider>
   );
 };
 
