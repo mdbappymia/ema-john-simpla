@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./Shiping.css";
 
@@ -24,13 +25,12 @@ const Shiping = () => {
         placeholder="Your phone"
         {...register("phone", { required: true })}
       />
+      {errors.phone && <span className="error">This field is required</span>}
       <input
         placeholder="Your address"
         {...register("address", { required: true })}
       />
-      {(errors.email || errors.address || errors.phone) && (
-        <span className="error">This field is required</span>
-      )}
+      {errors.address && <span className="error">This field is required</span>}
 
       <input type="submit" />
     </form>
