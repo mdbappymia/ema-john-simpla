@@ -22,3 +22,15 @@
   position: fixed;
   right: 5%;
 }
+.pagination {
+  margin: 30px;
+}
+.pagination button {
+  padding: 0 10px;
+  margin-right: 10px;
+}
+.pagination .selected {
+  background-color: rgb(83, 241, 21);
+  color: white;
+  border: none;
+}
